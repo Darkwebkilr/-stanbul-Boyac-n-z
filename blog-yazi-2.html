@@ -29,11 +29,31 @@
                 <a href="index.html"><img src="img/Logo.png" alt="İstanbul Boyacınız Logosu" class="h-24 md:h-28"></a>
                 <div class="hidden md:flex items-center gap-8 text-gray-700">
                     <a class="hover:text-[var(--primary-600)] transition-colors" href="index.html">Anasayfa</a>
-                    <a class="hover:text-[var(--primary-600)] transition-colors" href="hizmetler.html">Hizmetlerimiz</a>
+                    <div class="relative group">
+                        <a class="hover:text-[var(--primary-600)] transition-colors flex items-center gap-1" href="hizmetler.html">
+                            Hizmetlerimiz
+                            <span class="material-icons text-base transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                        </a>
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 w-56 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
+                            <div class="py-2">
+                                <a href="ic-cephe-boyama.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[var(--primary-600)]">İç Cephe Boyama</a>
+                                <a href="dis-cephe-boyama.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[var(--primary-600)]">Dış Cephe Boyama</a>
+                                <a href="ticari-boyama.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[var(--primary-600)]">Ticari Boyama</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="hover:text-[var(--primary-600)] transition-colors" href="hakkimizda.html">Hakkımızda</a>
+                    <a class="hover:text-[var(--primary-600)] transition-colors" href="galeri.html">Galerimiz</a>
                     <a class="hover:text-[var(--primary-600)] transition-colors" href="blog.html">Blog</a>
                     <a class="hover:text-[var(--primary-600)] transition-colors" href="iletisim.html">İletişim</a>
                 </div>
-                <button id="menu-button" class="md:hidden text-gray-700 z-50"><span class="material-icons text-3xl">menu</span></button>
+                <a href="tel:+905387410140" class="hidden lg:flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-lg font-bold hover:bg-blue-200 transition-colors">
+                    <span class="material-icons">phone</span>
+                    +90 538 741 01 40
+                </a>
+                <button id="menu-button" class="md:hidden text-gray-700 z-50">
+                    <span class="material-icons text-3xl">menu</span>
+                </button>
             </nav>
         </header>
 
@@ -53,7 +73,7 @@
                     <a href="blog.html" class="text-[var(--primary-600)] font-semibold hover:underline">&larr; Blog'a Geri Dön</a>
                     <h1 class="mt-4 text-4xl md:text-5xl font-black text-gray-900">Doğru Boya Nasıl Seçilir? Mat mı, Saten mi?</h1>
                     <p class="mt-4 text-lg text-gray-500">Yayınlanma Tarihi: 25 Temmuz 2025</p>
-                    <div class="mt-8 h-96 w-full bg-cover bg-center rounded-lg shadow-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlowHjSZOOmamVQaj4TDVCZczKe7H-uCx1rfGK-ZvJHVIDYuVVeP4byI66btNyPT2_F0JTjqAs1xs6Nv_KNYD7LMWch0hFIlXd7kSoaNGmQZoizTT2n9R7lMTRNGgcuyJoIxEUzIwqsZuSCeU7TWgOeOZOy0i6cs8EeEemHCuXE18JsjiMDGeWtmOusZPJyqziEGPeMlh_mQMcnRuXlj_yJFEcev5UCtYtHnYEGdDXMk0RARO9gS-93sQwqX-y3PwA9sKT0c6SCgY");'></div>
+                    <div class="mt-8 h-96 w-full bg-cover bg-center rounded-lg shadow-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlowHjSZOOmamVQaj4TDVCZczKe7H-uCx1rfGK-ZvJHVIDYuVVeP4byI66btNyPT2_F0JTjqAs1xs6Nv_KNYD7LMWch0hFIlXd7kSoaNGmQZoizTT2n9R7lMTRNGgcuyJoIxEUzIwqsZuSCeU7TWgOeOZOy0i6cs8EeEemHCuXE18JsjiMDGeWtmOusZPJyqziEGPeMlh_mQMcnRuXlj_yJFEcev5UCtYtHnYEGdDXMk0RARO9gS-93sQwqX-y3PwA9sKT0c6SCgY");' role="img" aria-label="Mat ve saten boya arasındaki parlaklık farkını gösteren duvar"></div>
                     <div class="mt-8 prose prose-lg max-w-none text-gray-700">
                         <p>Duvarlarınız için boya seçerken parlaklık seviyesi en az renk kadar önemlidir. Doğru parlaklık, hem odanın estetiğini hem de boyanın dayanıklılığını doğrudan etkiler. En yaygın iki seçenek olan mat ve saten boya arasındaki farkları ve hangisini nerede kullanmanız gerektiğini bu yazıda açıklıyoruz.</p>
                         <h2>Mat Boya: Kusurları Gizleyen Zarafet</h2>
@@ -81,48 +101,62 @@
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div>
                         <h3 class="text-lg font-semibold">İstanbul Boyacınız</h3>
-                        <p class="mt-4 text-sm text-[var(--secondary-300)]">Mekanlarınızı profesyonel dokunuşlarla renklendiriyor, hayallerinizdeki yaşam alanlarını gerçeğe dönüştürüyoruz.</p>
+                        <p class="mt-4 text-sm text-[var(--secondary-300)]">Mekanlarınızı profesyonel dokunuşlarla
+                            renklendiriyor, hayallerinizdeki yaşam alanlarını gerçeğe dönüştürüyoruz.</p>
                     </div>
                     <div>
                         <h3 class="text-sm font-semibold tracking-wider uppercase">Site Haritası</h3>
                         <ul class="mt-4 space-y-3">
-                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors" href="index.html">Anasayfa</a></li>
-                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors" href="hizmetler.html">Hizmetlerimiz</a></li>
-                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors" href="blog.html">Blog</a></li>
-                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors" href="iletisim.html">İletişim</a></li>
+                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors"
+                                    href="index.html">Anasayfa</a></li>
+                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors"
+                                    href="hizmetler.html">Hizmetlerimiz</a></li>
+                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors"
+                                    href="hakkimizda.html">Hakkımızda</a></li>
+                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors"
+                                    href="galeri.html">Galerimiz</a></li>
+                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors"
+                                    href="blog.html">Blog</a></li>
+                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors"
+                                    href="iletisim.html">İletişim</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-sm font-semibold tracking-wider uppercase">Başlıca Hizmetler</h3>
                         <ul class="mt-4 space-y-3">
-                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors" href="hizmetler.html">İç Cephe Boyama</a></li>
-                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors" href="hizmetler.html">Dış Cephe Boyama</a></li>
-                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors" href="hizmetler.html">Ticari Alan Boyama</a></li>
+                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors"
+                                    href="ic-cephe-boyama.html">İç Cephe Boyama</a></li>
+                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors"
+                                    href="dis-cephe-boyama.html">Dış Cephe Boyama</a></li>
+                            <li><a class="text-sm text-[var(--secondary-300)] hover:text-white transition-colors"
+                                    href="ticari-boyama.html">Ticari Alan Boyama</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-sm font-semibold tracking-wider uppercase">Bize Ulaşın</h3>
                         <ul class="mt-4 space-y-3 text-sm text-[var(--secondary-300)]">
-                            <li class="flex items-start"><span class="material-icons text-lg mr-2 mt-1">location_on</span><span>Kadıköy/İstanbul</span></li>
-                            <li class="flex items-start"><span class="material-icons text-lg mr-2 mt-1">phone</span><a href="tel:+905555555555" class="hover:text-white transition-colors">+90 555 555 55 55</a></li>
-                            <li class="flex items-start"><span class="material-icons text-lg mr-2 mt-1">email</span><a href="mailto:info@istanbulboyaciniz.com" class="hover:text-white transition-colors">info@istanbulboyaciniz.com</a></li>
+                            <li class="flex items-start"><span
+                                    class="material-icons text-lg mr-2 mt-1">location_on</span><span>Kadıköy/İstanbul</span>
+                            </li>
+                            <li class="flex items-start"><span class="material-icons text-lg mr-2 mt-1">phone</span><a
+                                    href="tel:+905387410140" class="hover:text-white transition-colors">+90 555 555 55
+                                    55</a></li>
+                            <li class="flex items-start"><span class="material-icons text-lg mr-2 mt-1">email</span><a
+                                    href="mailto:info@istanbulboyaciniz.com"
+                                    class="hover:text-white transition-colors">info@istanbulboyaciniz.com</a></li>
                         </ul>
-                        <div class="mt-6 flex space-x-4">
-                            <a class="text-[var(--secondary-300)] hover:text-white" href="#"><span class="sr-only">Facebook</span><span class="material-icons">facebook</span></a>
-                            <a class="text-[var(--secondary-300)] hover:text-white" href="#"><span class="sr-only">Instagram</span><span class="material-icons">photo_camera</span></a>
-                            <a class="text-[var(--secondary-300)] hover:text-white" href="#"><span class="sr-only">Twitter</span><span class="material-icons">flutter_dash</span></a>
-                        </div>
                     </div>
                 </div>
-                <div class="mt-12 border-t border-[var(--secondary-800)] pt-8 text-center text-sm text-[var(--secondary-400)]">
+                <div
+                    class="mt-12 border-t border-[var(--secondary-800)] pt-8 text-center text-sm text-[var(--secondary-400)]">
                     <p>© 2025 İstanbul Boyacınız. Tüm hakları saklıdır.</p>
                 </div>
             </div>
         </footer>
 
         <div class="fixed bottom-4 right-4 z-20 flex flex-col gap-3">
-            <a href="https://wa.me/905555555555" target="_blank" class="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-transform hover:scale-110"><span class="material-icons text-3xl">whatsapp</span></a>
-            <a href="tel:+905555555555" class="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--primary-600)] text-white shadow-lg transition-transform hover:scale-110"><span class="material-icons text-3xl">phone</span></a>
+            <a href="https://wa.me/905387410140" target="_blank" class="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-transform hover:scale-110"><span class="material-icons text-3xl">whatsapp</span></a>
+            <a href="tel:+905387410140" class="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--primary-600)] text-white shadow-lg transition-transform hover:scale-110"><span class="material-icons text-3xl">phone</span></a>
         </div>
     </div>
 

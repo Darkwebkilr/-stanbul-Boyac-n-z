@@ -1,0 +1,10 @@
+# Allow all user agents to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow crawling of specific files or directories if needed in the future
+# Disallow: /private/
+# Disallow: /temp.html
+
+# Location of sitemap
+Sitemap: https://www.istanbulboyaciniz.com/sitemap.xml
