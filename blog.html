@@ -79,7 +79,7 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                         
-                        <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <article class="bg-white rounded-lg shadow-lg overflow-hidden group transition-transform duration-300 transform hover:-translate-y-2">
                             <a href="blog-yazi-1.html">
                                 <div class="h-56 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWbLxa4eUWJscCEUewVmDbTRmBw9lnUWJTxgvyvKMUjRR3HEnYbNVzpgbqEhlyrS_wgz_09qpoH8fQdku9obfEAjK7fMpW7JLgScprEK1B-hc9mZRyBQefFljQF25JPTM9NFJvC6VAzdJKPW53SczjsWyXeywxA792dB-QtyZFGePMgeFf_wSP-burswp491pA47Jn-ct57nKmwXPyXVdN2Wfzar2k-bfgV1pa0IEqtUOX0L_zHG8l4D5n53wAYmi4lV9AYTXkx8o");' role="img" aria-label="2025 yılının trend duvar renklerini gösteren bir renk paleti"></div>
                             </a>
@@ -91,7 +91,7 @@
                             </div>
                         </article>
 
-                        <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <article class="bg-white rounded-lg shadow-lg overflow-hidden group transition-transform duration-300 transform hover:-translate-y-2">
                              <a href="blog-yazi-2.html">
                                 <div class="h-56 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlowHjSZOOmamVQaj4TDVCZczKe7H-uCx1rfGK-ZvJHVIDYuVVeP4byI66btNyPT2_F0JTjqAs1xs6Nv_KNYD7LMWch0hFIlXd7kSoaNGmQZoizTT2n9R7lMTRNGgcuyJoIxEUzIwqsZuSCeU7TWgOeOZOy0i6cs8EeEemHCuXE18JsjiMDGeWtmOusZPJyqziEGPeMlh_mQMcnRuXlj_yJFEcev5UCtYtHnYEGdDXMk0RARO9gS-93sQwqX-y3PwA9sKT0c6SCgY");' role="img" aria-label="Mat ve saten boya arasındaki farkı gösteren bir duvar kesiti"></div>
                             </a>
@@ -103,7 +103,7 @@
                             </div>
                         </article>
 
-                        <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                        <article class="bg-white rounded-lg shadow-lg overflow-hidden group transition-transform duration-300 transform hover:-translate-y-2">
                             <a href="blog-yazi-3.html">
                                 <div class="h-56 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7E-2FSV2k94bVs7jAudwqaiw1I50vhxX9KbPQI9_Jf1qt2Cy7S95uFmslJD7dlmmC2xn_f0Xap8AtV1HGKU2KutLRnnKUz_kq0XXpj9GMYqiDLQx-zObG-nFdZFH4HpGtTNLzI5cXMcxbQ922TCLdQcFkHnBVZVHPbV7JrCHvP8O-BriHFR4T7rwMwrrlv4QuEovUFRfIDEQU3AhuYh3O-FH8iIBzSqb2T27sOt7mYbJWjCirAR4ctbO3PtxJkV08zmMdjw50O_Q");' role="img" aria-label="Doğru boya rengi seçimi için renk kartelaları"></div>
                             </a>
@@ -206,5 +206,27 @@
             }, { passive: true });
         });
     </script>
-</body>
+
+        <button id="scrollTopBtn" title="Yukarı Çık" class="fixed bottom-36 right-4 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-gray-800 text-white shadow-lg transition-all duration-300 hover:bg-gray-900 hover:scale-110 focus:outline-none">
+            <span class="material-icons">arrow_upward</span>
+        </button>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const scrollTopBtn = document.getElementById('scrollTopBtn');
+                if (scrollTopBtn) {
+                    window.addEventListener('scroll', () => {
+                        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                            scrollTopBtn.style.display = 'flex';
+                        } else {
+                            scrollTopBtn.style.display = 'none';
+                        }
+                    }, { passive: true });
+
+                    scrollTopBtn.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+            });
+        </script>
+    </body>
 </html>

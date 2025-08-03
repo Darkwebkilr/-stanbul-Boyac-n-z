@@ -197,5 +197,27 @@
             }, { passive: true });
         });
     </script>
-</body>
+
+        <button id="scrollTopBtn" title="Yukarı Çık" class="fixed bottom-36 right-4 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-gray-800 text-white shadow-lg transition-all duration-300 hover:bg-gray-900 hover:scale-110 focus:outline-none">
+            <span class="material-icons">arrow_upward</span>
+        </button>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const scrollTopBtn = document.getElementById('scrollTopBtn');
+                if (scrollTopBtn) {
+                    window.addEventListener('scroll', () => {
+                        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                            scrollTopBtn.style.display = 'flex';
+                        } else {
+                            scrollTopBtn.style.display = 'none';
+                        }
+                    }, { passive: true });
+
+                    scrollTopBtn.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+            });
+        </script>
+    </body>
 </html>

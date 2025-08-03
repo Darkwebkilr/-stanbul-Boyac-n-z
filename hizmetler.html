@@ -13,20 +13,22 @@
     <title>Hizmetlerimiz - İstanbul Boyacınız</title>
     <meta name="description" content="İstanbul Boyacınız olarak sunduğumuz profesyonel iç cephe, dış cephe ve ticari boya badana hizmetlerinin detayları.">
     <link href="img/Logo.png" rel="icon" type="image/png">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
     <style type="text/tailwindcss">
-        :root {
-            --primary-50: #fef2f2;
-            --primary-100: #fee2e2;
-            --primary-200: #fecaca;
-            --primary-300: #fca5a5;
-            --primary-400: #f87171;
-            --primary-500: #ef4444;
-            --primary-600: #e92933;
-            --primary-700: #b91c1c;
-            --primary-800: #991b1b;
-            --primary-900: #7f1d1d;
-            --primary-950: #450a0a;
+        @layer base {
+          :root {
+            --primary-50: #eff6ff;
+            --primary-100: #dbeafe;
+            --primary-200: #bfdbfe;
+            --primary-300: #93c5fd;
+            --primary-400: #60a5fa;
+            --primary-500: #3b82f6;
+            --primary-600: #2563eb;
+            --primary-700: #1d4ed8;
+            --primary-800: #1e40af;
+            --primary-900: #1e3a8a;
+            --primary-950: #172554;
+
             --secondary-50: #f8fafc;
             --secondary-100: #f1f5f9;
             --secondary-200: #e2e8f0;
@@ -38,43 +40,43 @@
             --secondary-800: #1e293b;
             --secondary-900: #0f172a;
             --secondary-950: #020617;
+          }
+          body { font-family: "Lexend","Noto Sans",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color: var(--secondary-800); }
+          /* Header readability improvements */
+          header a { letter-spacing: 0; }
+          header nav a { color: var(--secondary-700); }
+          header nav a:hover { color: var(--primary-600); }
+          header .menu-link { font-weight: 600; }
         }
-        body {
-            font-family: "Lexend", "Noto Sans", sans-serif;
-        }
+
         #mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--secondary-900);
-            clip-path: circle(0% at calc(100% - 44px) 54px);
-            transition: clip-path 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-            pointer-events: none;
-            z-index: 40;
+          position: fixed; top:0; left:0; width:100%; height:100%;
+          display:flex; flex-direction:column; justify-content:center; align-items:center;
+          background: radial-gradient(1200px 1200px at calc(100% - 44px) 54px, rgba(2,6,23,0.98) 0%, rgba(2,6,23,0.98) 60%, rgba(2,6,23,0.96) 100%);
+          clip-path: circle(0% at calc(100% - 44px) 54px);
+          transition: clip-path .6s cubic-bezier(.25,1,.5,1);
+          pointer-events:none; z-index:40;
         }
-        #mobile-menu.open {
-            clip-path: circle(150% at calc(100% - 44px) 54px);
-            pointer-events: auto;
-        }
+        #mobile-menu.open { clip-path: circle(150% at calc(100% - 44px) 54px); pointer-events:auto; }
+
         .header-sticky {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            animation: slideDown 0.5s ease-out;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+          position: fixed; top:0; left:0; right:0; width:100%;
+          animation: slideDown .5s ease-out;
+          backdrop-filter: saturate(180%) blur(10px);
+          background-color: rgba(255,255,255,.85);
+          box-shadow: 0 10px 30px rgba(2,6,23,.06);
+          border-bottom: 1px solid rgba(226,232,240,.7);
         }
-        @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
+        @keyframes slideDown { from { transform: translateY(-100%);} to { transform: translateY(0);} }
+
+        .btn-primary { @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold text-white bg-[var(--primary-600)] shadow-lg transition-all duration-300; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(37,99,235,.25); background: var(--primary-700); }
+        .btn-outline { @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold border border-[var(--primary-200)] text-[var(--primary-700)] bg-white transition-all duration-300; }
+        .btn-outline:hover { border-color: var(--primary-300); color: var(--primary-800); box-shadow: 0 8px 20px rgba(37,99,235,.12); transform: translateY(-2px); }
+
+        .card { @apply rounded-xl bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 border border-slate-100; }
+        .reveal { opacity:0; transform: translateY(16px); transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); }
+        .reveal.show { opacity:1; transform: translateY(0); }
     </style>
 </head>
 
@@ -84,12 +86,9 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->s
     <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
-        <header id="main-header"
-            class="relative bg-white top-0 left-0 right-0 z-30 px-4 py-2 sm:px-6 lg:px-8 transition-all duration-300">
+        <header id="main-header" class="relative bg-white top-0 left-0 right-0 z-30 px-4 py-2 sm:px-6 lg:px-8 transition-all duration-300">
             <nav class="flex items-center justify-between max-w-7xl mx-auto">
-                <a href="index.html">
-                    <img src="img/Logo.png" alt="İstanbul Boyacınız Logosu" class="h-24 md:h-28">
-                </a>
+                <a href="index.html"><img src="img/Logo.png" alt="İstanbul Boyacınız Logosu" class="h-24 md:h-28"></a>
                 <div class="hidden md:flex items-center gap-8 text-gray-700">
                     <a class="hover:text-[var(--primary-600)] transition-colors" href="index.html">Anasayfa</a>
                     <div class="relative group">
@@ -137,11 +136,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <main id="main-content" class="flex-grow">
-            <section class="bg-cover bg-center py-20 md:py-32" style='background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8S17uMvD7GJ5ppggmbtW_1h7AXQh-wokMlTSJSLcqvXLwOWiRCNoGvpJ-rlCwajuixafVwh7VXfjT2J11U3beSiJYstDO3xAikmqH83d9-DjF7n5gCZB0lTLXZbQpdZdcbDbwRmQrl-i3xNh0508vBiJrrvm_7nRI6nzPvxb4IRKjQHDaiq6RtKIcwuLq6wV5X5OzyuM9UIbOARH6hWTqIQ4hHNrCfVJphPkZjSB5zcHYxMOIYwQ__RbfesH_-CKKaLN4VwCoBFA");'>
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-                    <h1 class="text-4xl md:text-6xl font-black">Hizmetlerimiz</h1>
-                    <p class="mt-4 text-lg md:text-xl font-light">Yaşam alanlarınızı uzmanlıkla dönüştürüyoruz.</p>
+            <section class="relative isolate overflow-hidden">
+              <div class="absolute inset-0 -z-10">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8S17uMvD7GJ5ppggmbtW_1h7AXQh-wokMlTSJSLcqvXLwOWiRCNoGvpJ-rlCwajuixafVwh7VXfjT2J11U3beSiJYstDO3xAikmqH83d9-DjF7n5gCZB0lTLXZbQpdZdcbDbwRmQrl-i3xNh0508vBiJrrvm_7nRI6nzPvxb4IRKjQHDaiq6RtKIcwuLq6wV5X5OzyuM9UIbOARH6hWTqIQ4hHNrCfVJphPkZjSB5zcHYxMOIYwQ__RbfesH_-CKKaLN4VwCoBFA" alt="Hero arkaplan" class="h-[45vh] md:h-[55vh] w-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900/70"></div>
+              </div>
+              <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-white">
+                <div class="min-h-[45vh] md:min-h-[55vh] flex items-center justify-center">
+                  <div class="max-w-3xl reveal">
+                    <h1 class="text-4xl md:text-6xl font-black tracking-tight">Hizmetlerimiz</h1>
+                    <p class="mt-4 text-lg md:text-xl font-light text-slate-200">Yaşam alanlarınızı uzmanlıkla dönüştürüyoruz.</p>
+                    <div class="mt-8 flex items-center justify-center gap-4">
+                      <a href="#hizmet-detaylari" class="btn-primary">Hizmetleri Gör</a>
+                      <a href="iletisim.html" class="btn-outline">Ücretsiz Teklif Al</a>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </section>
 
             <section id="hizmet-detaylari" class="py-16 sm:py-24 bg-white">
@@ -237,9 +248,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </footer>
 
         <div class="fixed bottom-4 right-4 z-20 flex flex-col gap-3">
-            <a href="https://wa.me/905387410140" target="_blank"
+            <a href="https://wa.me/905387410140" target="_blank" aria-label="WhatsApp ile yazın"
                 class="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-transform hover:scale-110">
-                <span class="material-icons text-3xl">whatsapp</span>
+                <svg aria-hidden="true" viewBox="0 0 32 32" class="h-8 w-8" fill="currentColor">
+                  <path d="M19.11 17.63c-.29-.15-1.7-.84-1.96-.93-.26-.1-.45-.15-.64.15-.19.29-.73.93-.9 1.12-.17.19-.33.22-.62.08-.29-.15-1.23-.45-2.34-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.48-.17 0-.36-.02-.55-.02-.19 0-.51.07-.78.36-.26.29-1 1-1 2.43 0 1.43 1.03 2.81 1.17 3 .15.19 2.03 3.11 4.91 4.35.69.3 1.23.48 1.65.62.69.22 1.32.19 1.81.12.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM16.02 27.5h-.01c-1.98 0-3.92-.53-5.62-1.54l-.4-.24-4.17 1.09 1.12-4.07-.26-.42a10.99 10.99 0 0 1-1.69-5.9c.01-6.08 4.96-11.03 11.05-11.03 2.95 0 5.72 1.15 7.8 3.22a10.94 10.94 0 0 1 3.24 7.79c-.01 6.09-4.96 11.04-11.04 11.04zm9.58-20.63A13.283 13.283 0 0 0 16.02 3.7c-7.31 0-13.26 5.94-13.28 13.24 0 2.33.61 4.6 1.77 6.61L3 29l5.58-1.47a13.24 13.24 0 0 0 6.45 1.67h.01c7.3 0 13.25-5.95 13.27-13.26a13.18 13.18 0 0 0-3.71-9.07z"/>
+                </svg>
             </a>
             <a href="tel:+905387410140"
                 class="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--primary-600)] text-white shadow-lg transition-transform hover:scale-110">
@@ -305,8 +318,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     }
                 }
             }, { passive: true });
+
+            // Keep submenu open while moving mouse from trigger to submenu
+            const serviceItem = document.querySelector('nav li.relative.group');
+            const submenu = serviceItem?.querySelector('.group\\/submenu');
+            if (serviceItem && submenu) {
+              let closeTimeout;
+              const open = () => {
+                clearTimeout(closeTimeout);
+                submenu.classList.add('opacity-100','translate-y-0');
+                submenu.classList.remove('opacity-0');
+                submenu.style.pointerEvents = 'auto';
+              };
+              const scheduleClose = () => {
+                clearTimeout(closeTimeout);
+                closeTimeout = setTimeout(() => {
+                  submenu.classList.remove('opacity-100','translate-y-0');
+                  submenu.classList.add('opacity-0');
+                  submenu.style.pointerEvents = 'none';
+                }, 80);
+              };
+              serviceItem.addEventListener('mouseenter', open);
+              serviceItem.addEventListener('mouseleave', scheduleClose);
+              submenu.addEventListener('mouseenter', open);
+              submenu.addEventListener('mouseleave', scheduleClose);
+            }
+
+            // Desktop dropdown focus accessibility
+            document.querySelectorAll('nav .group > a').forEach(trigger => {
+              trigger.addEventListener('focus', () => trigger.parentElement.classList.add('group-hover'));
+              trigger.addEventListener('blur', () => trigger.parentElement.classList.remove('group-hover'));
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -10% 0px" });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
     </script>
 
 
-</body>
+
+        <button id="scrollTopBtn" title="Yukarı Çık" class="fixed bottom-36 right-4 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-gray-800 text-white shadow-lg transition-all duration-300 hover:bg-gray-900 hover:scale-110 focus:outline-none">
+            <span class="material-icons">arrow_upward</span>
+        </button>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const scrollTopBtn = document.getElementById('scrollTopBtn');
+                if (scrollTopBtn) {
+                    window.addEventListener('scroll', () => {
+                        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                            scrollTopBtn.style.display = 'flex';
+                        } else {
+                            scrollTopBtn.style.display = 'none';
+                        }
+                    }, { passive: true });
+
+                    scrollTopBtn.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+            });
+        </script>
+    </body>

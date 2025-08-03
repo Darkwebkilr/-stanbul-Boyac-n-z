@@ -84,10 +84,10 @@
                         <p class="lead">Boya rengi seçimi, bir mekanın tüm atmosferini, enerjisini ve algılanan boyutunu değiştirebilecek en önemli tasarım kararlarından biridir. Doğru renk seçimi, sadece duvarlara yeni bir kat boya çekmekten çok daha fazlasıdır; bu, kişiliğinizi yansıtma ve yaşam alanınızda istediğiniz duyguyu yaratma sanatıdır. Peki, yüzlerce renk ve ton arasından sizin için en doğru olanı nasıl bulacaksınız? İşte İstanbul Boyacınız'dan profesyonel ipuçları.</p>
                         
                         <h2>1. Mekanın Işığını Gözlemleyin</h2>
-                        <p>Bir rengin nas��l göründüğünü en çok etkileyen faktör ışıktır. Odanız gün içinde doğal ışık alıyor mu? Işık hangi yönden geliyor? Kuzeye bakan odalar daha soğuk ve mavimsi bir ışık alırken, güneye bakan odalar daha sıcak, sarımsı bir ışığa sahiptir. Rengi seçmeden önce, günün farklı saatlerinde duvarınızda nasıl durduğunu görmek için mutlaka bir numune uygulaması yapın. Unutmayın, aydınlatma da rengi tamamen değiştirebilir. Akşamları kullandığınız yapay ışık altında rengin nasıl görüneceğini de test edin.</p>
+                        <p>Bir rengin nasıl göründüğünü en çok etkileyen faktör ışıktır. Odanız gün içinde doğal ışık alıyor mu? Işık hangi yönden geliyor? Kuzeye bakan odalar daha soğuk ve mavimsi bir ışık alırken, güneye bakan odalar daha sıcak, sarımsı bir ışığa sahiptir. Rengi seçmeden önce, günün farklı saatlerinde duvarınızda nasıl durduğunu görmek için mutlaka bir numune uygulaması yapın. Unutmayın, aydınlatma da rengi tamamen değiştirebilir. Akşamları kullandığınız yapay ışık altında rengin nasıl görüneceğini de test edin.</p>
 
                         <h2>2. Odanın Büyüklüğü ve Amacı</h2>
-                        <p>Renkler, mekan algısını doğrudan etkiler. Genel bir kural olarak, açık renkler (beyaz, krem, açık gri, pastel tonlar) mekanı daha büyük, ferah ve aydınlık gösterir. Bu nedenle küçük veya az ışık alan odalar için idealdirler. Koyu renkler (antrasit, lacivert, bordo) ise mekana derinlik, samimiyet ve sofistike bir hava katar ancak odayı daha küçük hissettirebilirler. Bu renkleri genellikle daha geniş odalarda veya tek bir vurgu duvarında kullanmak etkileyici sonuçlar yaratır.</p>
+                        <p>Renkler, mekan algısını doğrudan etkiler. Genel bir kural olarak, açık renkler (beyaz, krem, açık gri, pastel tonlar) mekanı daha büyük, ferah ve aydınlık gösterir. Bu nedenle küçük veya az ışık alan odalar için idealdirler. Koyu renkler (antrasit, lacivert, bordo) ise mekana derinlik, samimiyet ve sofistike bir hava katar ancak odayı daha k��çük hissettirebilirler. Bu renkleri genellikle daha geniş odalarda veya tek bir vurgu duvarında kullanmak etkileyici sonuçlar yaratır.</p>
 
                         <h2>3. Mobilya ve Dekorasyonla Uyumu</h2>
                         <p>Duvarlarınız, odanızdaki bir yapbozun sadece bir parçasıdır. Renk seçerken mevcut mobilyalarınızı, perdelerinizi, halılarınızı ve sanat eserlerinizi göz önünde bulundurun. Duvar renginiz, bu eşyalarla bir kontrast mı oluşturmalı yoksa onlarla uyumlu bir bütünlük mü sağlamalı? Örneğin, nötr tonlardaki mobilyalarınız varsa, duvarlarda cesur bir renk kullanarak odak noktası yaratabilirsiniz. Eğer renkli ve desenli bir koltuğunuz varsa, duvarlarda daha sakin ve nötr tonlar tercih etmek dengeyi sağlayacaktır.</p>
@@ -202,5 +202,27 @@
             }, { passive: true });
         });
     </script>
-</body>
+
+        <button id="scrollTopBtn" title="Yukarı Çık" class="fixed bottom-36 right-4 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-gray-800 text-white shadow-lg transition-all duration-300 hover:bg-gray-900 hover:scale-110 focus:outline-none">
+            <span class="material-icons">arrow_upward</span>
+        </button>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const scrollTopBtn = document.getElementById('scrollTopBtn');
+                if (scrollTopBtn) {
+                    window.addEventListener('scroll', () => {
+                        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                            scrollTopBtn.style.display = 'flex';
+                        } else {
+                            scrollTopBtn.style.display = 'none';
+                        }
+                    }, { passive: true });
+
+                    scrollTopBtn.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+            });
+        </script>
+    </body>
 </html>
